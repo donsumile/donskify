@@ -303,6 +303,7 @@ a {
     border: 0;
     flex-grow: 1;
     padding: 1.5rem 2rem;
+    width: 0;
 }
 
 .input-group .button {
@@ -379,7 +380,7 @@ a {
 
 .plan .list__item {
     margin-bottom: 2rem;
-    letter-spacing: 0.5;
+    letter-spacing: 0.2px;
 }
 
 .plan--popular {
@@ -641,13 +642,14 @@ a {
 .block--dark h3 {
     color: #fff;
 }
-.block:last .block--skewed--right {
-    clip-path: polygon(0 0%, 100% 0, 100% 100%, 0 90%);
+
+.block--skewed--right {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
     padding-bottom: calc(var(--padding-vertical) + 4rem);
 }
 
 .block--skewed--left {
-    clip-path: polygon(0 0%, 100% 0, 100% 90%, 0 100%);
+    clip-path: polygon(0 0%, 100% 0, 100% 95%, 0 100%);
     padding-bottom: calc(var(--padding-vertical) + 4rem);
 }
 
@@ -659,6 +661,18 @@ a {
 .container {
     max-width: 1140px;
     margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+    .block--skewed--right {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+        padding-bottom: calc(var(--padding-vertical) + 4rem);
+    }
+
+    .block--skewed--left {
+        clip-path: polygon(0 0%, 100% 0, 100% 90%, 0 100%);
+        padding-bottom: calc(var(--padding-vertical) + 4rem);
+    }
 }
 
 /* Navigation Bars */
@@ -754,13 +768,14 @@ a {
 
 .block-domain__prices {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 6rem);
     font-size: 2rem;
     font-weight: 600;
     justify-items: center;
     max-width: 700px;
     margin: 0 auto;
+    color: var(--color-headings);
 }
 
 @media screen and (min-width: 768px) {
